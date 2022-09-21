@@ -49,3 +49,8 @@ main {
   color: #fff;
   transform: translateY(-7px);
 }
+
+.content {
+  font-style: italic;
+  font-size: 2rem;
+}

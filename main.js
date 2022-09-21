@@ -1,10 +1,16 @@
 const generateButton = document.querySelector('.generateButton');
-const API_URL = 'http://api.forismatic.com/api/1.0/.';
+const placeholder = document.querySelector('.content'); 
+const API_URL = 'https://api.adviceslip.com/advice'
 generateButton.addEventListener('click', getAPI)
 
 function getAPI () {
-  fetch('https://api.forismatic.com/api/1.0/')
+  fetch(API_URL)
     .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+    .then(data => {
+      console.log(data.slip.advice)
+      placeholder.textContent = data.slip.advice;
+    })
+    .catch(err => {
+      console.log(err)
+    });
 }
